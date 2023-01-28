@@ -64,5 +64,4 @@ cajaPedidos.childNodes.forEach(elemento => {
     elemento.addEventListener('change',(evt)=>{
         evt.target.nextElementSibling.innerText=evt.target.value
     },false)
-    
 });
