@@ -43,9 +43,6 @@ function crearCajaArticulo(){
     inputRange.min = '1'
     inputRange.max = '5'
     inputRange.setAttribute('list', 'tickmarks')
-    inputRange.addEventListener('change', (evt)=>{
-        evt.target.nextElementSibling.innerText=evt.target.value
-    },false)
     cajaArticulo.appendChild(inputRange)
     //Elemento output.
     let output = document.createElement('output')
@@ -61,3 +58,11 @@ cajon.childNodes[2].innerText="Vestido negro. Etiqueta"
 cajaPedidos.appendChild(cajon)
 cajon = cajaPedidos.firstElementChild.cloneNode(true); //Clona la primera cajaArticulo.
 cajaPedidos.appendChild(cajon)
+
+//Añadir eventos.
+cajaPedidos.childNodes.forEach(elemento => {
+    elemento.addEventListener('change',(evt)=>{
+        evt.target.nextElementSibling.innerText=evt.target.value
+    },false)
+    
+});
